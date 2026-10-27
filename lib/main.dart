@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'splash_screen.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -10,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colorScheme = ColorScheme.fromSeed(
-      seedColor: const Color(0xFF8D6E63),
+      seedColor: const Color.fromARGB(255, 221, 82, 18),
       brightness: Brightness.light,
     );
 
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: colorScheme,
         useMaterial3: true,
-        scaffoldBackgroundColor: const Color(0xFFF8F6F4),
+        scaffoldBackgroundColor: const Color(0xFFF0FDF4),
         appBarTheme: AppBarTheme(
           centerTitle: false,
           backgroundColor: colorScheme.primary,
@@ -35,7 +37,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const MyHomePage(title: 'Tlapalería App'),
+      home: const SplashScreen(),
     );
   }
 }
@@ -72,10 +74,7 @@ class MyHomePage extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   gradient: LinearGradient(
-                    colors: [
-                      colorScheme.primary,
-                      const Color(0xFFA1887F),
-                    ],
+                    colors: [colorScheme.primary, const Color(0xFFA1887F)],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),
@@ -128,10 +127,7 @@ class MyHomePage extends StatelessWidget {
                     icon: Icons.local_offer_outlined,
                     label: 'Ofertas',
                   ),
-                  _QuickCard(
-                    icon: Icons.phone_outlined,
-                    label: 'Contacto',
-                  ),
+                  _QuickCard(icon: Icons.phone_outlined, label: 'Contacto'),
                 ],
               ),
               const SizedBox(height: 24),
@@ -140,10 +136,7 @@ class MyHomePage extends StatelessWidget {
                   padding: const EdgeInsets.all(16),
                   child: Row(
                     children: [
-                      Icon(
-                        Icons.info_outline,
-                        color: colorScheme.primary,
-                      ),
+                      Icon(Icons.info_outline, color: colorScheme.primary),
                       const SizedBox(width: 12),
                       Expanded(
                         child: Text(
@@ -164,10 +157,7 @@ class MyHomePage extends StatelessWidget {
 }
 
 class _QuickCard extends StatelessWidget {
-  const _QuickCard({
-    required this.icon,
-    required this.label,
-  });
+  const _QuickCard({required this.icon, required this.label});
 
   final IconData icon;
   final String label;
@@ -187,11 +177,7 @@ class _QuickCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Icon(
-                icon,
-                size: 28,
-                color: colorScheme.primary,
-              ),
+              Icon(icon, size: 28, color: colorScheme.primary),
               const Spacer(),
               Text(
                 label,
