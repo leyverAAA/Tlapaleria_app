@@ -10,9 +10,9 @@ Aplicación móvil para catálogo de productos de ferretería/tlapalería. Permi
 **Justificación:** Se identifica la necesidad de digitalizar el catálogo y carrito de una tlapalería para facilitar la consulta de productos.
 
 ## Integrantes
-- Integrante 1: [Nombre completo]
-- Integrante 2: [Nombre completo]
-- Integrante 3: [Nombre completo]
+- Integrante 1: Leyver Aaron Gonzalez Mendoza
+- Integrante 2: Zaid Emanuel Hernandez Espinosa
+- Integrante 3: Benjamin Alberto Arce Hernadez 
 
 ## Requisitos cumplidos (Etapa 1)
 - [x] Flujo de entrada (SplashScreen)
@@ -71,3 +71,17 @@ _Agregar capturas de pantalla aquí (splash, home, catálogo, detalle, carrito).
 
 ## IA Log
 Ver [AI_LOG.md](AI_LOG.md)
+
+##  Contacto
+
+Si tienes alguna pregunta o feedback, ¡no dudes en escribirme!
+
+### Leyver Aaron Gonzalez Mendoza
+- **Correo:** [gonzalezleyver6@gmail.com](mailto:gonzalezleyver6@gmail.com)
+- **LinkedIn:** [Leyver Aaron Gonzalez Mendoza](https://www.linkedin.com/in/leyver-aaron-gonzalez-mendoza-7026a73a8/)
+### Benjamin Alberto Arce Hernadez 
+- **Correo:** [233111887@upmh.edu.mx](mailto:233111887@upmh.edu.mx)
+- **LinkedIn:** [Leyver Aaron Gonzalez Mendoza](https://www.linkedin.com/in/leyver-aaron-gonzalez-mendoza-7026a73a8/)
+### Zaid Emanuel Hernandez Espinosa
+- **Correo:** [233111046@upmh.edu.mx](mailto:233111046@upmh.edu.mx)
+- **LinkedIn:** [Leyver Aaron Gonzalez Mendoza](https://www.linkedin.com/in/leyver-aaron-gonzalez-mendoza-7026a73a8/)
