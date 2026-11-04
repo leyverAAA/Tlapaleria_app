@@ -12,6 +12,69 @@ Aplicación móvil para catálogo de productos de ferretería/tlapalería. Permi
 - Integrante 2: Zaid Emanuel Hernandez Espinosa
 - Integrante 3: Benjamin Alberto Arce Hernadez 
 
+## Plan de Trabajo, Roles y Tareas
+
+### Roles Asignados
+
+| Rol | Integrante | Responsabilidades |
+| :-- | :-- | :-- |
+| **Coordinación / Git / Documentación** | Leyver Aaron Gonzalez Mendoza | Organización de reuniones, manejo de ramas y Pull Requests, revisión de commits, mantenimiento del `README.md`, `AI_LOG.md` y bitácora del equipo. |
+| **UI/UX / Diseño** | Zaid Emanuel Hernandez Espinosa | Diseño de interfaces, tema global, componentes reutilizables, assets propios y asegurar la coherencia visual de la aplicación. |
+| **Arquitectura / Datos / Navegación** | Benjamin Alberto Arce Hernadez | Estructura del proyecto, modelos, repositorios, navegación entre pantallas, estado compartido con Provider e integración general. | 
+
+
+
+### División de Tareas por Integrante
+
+#### 1. Leyver Aaron Gonzalez Mendoza (Coordinación / Git / Documentación)
+| Tarea | Descripción | Entregable | Estado |
+| :-- | :-- | :-- | :-- |
+| Definición del proyecto | Plasmar el problema, usuarios, alcance del MVP y justificación de la ruta elegida. | Documento de definición | Pendiente |
+| Bocetos y Wireframes | Realizar bocetos de todas las pantallas a implementar. | Bocetos (Digital o Físicos) | Pendiente |
+| Gestión de GitHub | Crear y administrar el repositorio, ramas por funcionalidad y asegurar commits de los 3 integrantes. | Repositorio organizado | Pendiente |
+| Documentación | Mantener y actualizar el `README.md` con toda la información requerida. | `README.md` Completo | Pendiente |
+| Bitácora de IA | Documentar todos los usos de IA permitidos en la rúbrica. | `AI_LOG.md` actualizado | Pendiente |
+
+
+#### 2. Zaid Emanuel Hernandez Espinosa (UI/UX / Diseño)
+| Tarea | Descripción | Entregable | Estado |
+| :-- | :-- | :-- | :-- |
+| Tema Global | Crear el tema de la aplicación con colores, tipografía y estilos. | `core/theme/app_theme.dart` | Pendiente |
+| Componentes Reutilizables | Crear al menos 2 componentes reutilizables. (Ej: `ProductCard` y `CustomButton`) | `core/widgets/` | Pendiente |
+| Diseño de Pantallas | Encargarse de la maquetación y estilos de `SplashScreen`, `HomeScreen`, `CatalogScreen`, `ProductDetailScreen` y `CartScreen`. | Pantallas con diseño coherente | Pendiente |
+| Assets | Añadir imágenes propias para los productos y declararlas en `pubspec.yaml`. | `assets/images/` y `pubspec.yaml` | Pendiente |
+| Pulido Visual | Revisar espaciados, estados vacíos, responsividad y detalles visuales. | UI pulida | Pendiente |
+
+
+#### 3. Benjamin Alberto Arce Hernadez (Arquitectura / Datos / Navegación)
+| Tarea | Descripción | Entregable | Estado |
+| :-- | :-- | :-- | :-- |
+| Modelo de Datos | Crear el modelo para los productos de la tlapalería. | `models/product.dart` | Pendiente |
+| Datos Locales | Crear una lista fija de productos para simular la base de datos. | `data/local/products_data.dart` | Pendiente |
+| Repositorio | Implementar el repositorio para obtener los productos (Listo para migrar a Firebase en Etapa 2). | `data/repositories/product_repository.dart` | Pendiente |
+| Estado Compartido | Implementar `CartProvider` con Provider para manejar el carrito, cantidades y total. | `features/cart/cart_provider.dart` | Pendiente |
+| Navegación | Configurar rutas, navegación entre pantallas y paso de argumentos al detalle del producto. | Sistema de navegación funcional | Pendiente |
+| Integración | Conectar todos los módulos en `main.dart` utilizando `MultiProvider`. | Aplicación integrada y funcional | Pendiente |
+
+
+### Cronograma
+
+| Semana | Actividades | Meta a Cumplir |
+| :-- | :-- | :-- |
+| **Semana 1** | Definición, bocetos, creación de estructura, modelo de datos, tema global y componentes base. | Arquitectura base, diseño y navegación inicial funcionando. |
+| **Semana 2** | Integración de todas las funcionalidades, pruebas, completar documentación (`README` y `AI_LOG`), capturas y preparación de demo. | MVP completamente funcional, compilando, documentado y listo para entrega. |
+
+
+### Reglas y Flujo de Trabajo
+
+- **Ramas por funcionalidad:** Cada integrante trabajará en su propia rama (Ej: `feature/documentacion`, `feature/ui`, `feature/arquitectura-datos`), para posteriormente hacer un merge a `main`.
+- **Commits descriptivos:** Todos los integrantes deberán realizar commits desde sus propias cuentas de GitHub, con mensajes claros y concisos.
+- **Funcionalidad completa:** Cada integrante es responsable de programar su parte al completo, esto para poder explicarla en su defensa individual.
+- **Uso de IA:** Solo se permitirá el uso para explicación de errores, dudas o fragmentos pequeños. Todo uso deberá ser debidamente documentado en el `AI_LOG.md`.
+- **Comunicación:** Reuniones constantes para integrar avances y evitar conflictos al momento de unir el código.
+- **Preparación para defensa:** Al finalizar, cada integrante deberá estar capacitado para explicar su código, decisiones técnicas y responder preguntas del docente.
+
+
 ## Requisitos cumplidos (Etapa 1)
 
 **Estado: 1 de 10 completados.**
@@ -35,6 +98,7 @@ Aplicación móvil para catálogo de productos de ferretería/tlapalería. Permi
 ### 5. Datos y arquitectura
 - [ ] Capa de datos con Model (Product) y Repository (ProductRepository)
 - [ ] Arquitectura organizada (core/, features/, models/, data/)
+
 
 ## Arquitectura
 ```
@@ -90,14 +154,16 @@ Sin código copiado sin citar. Componentes y estructura propios basados en lo vi
 ## IA Log
 Ver [AI_LOG.md](AI_LOG.md)
 
-##  Contacto
+## Contacto
 
-Si tienes alguna pregunta o feedback, ¡no dudes en escribirme!
+Si tienes alguna pregunta o feedback, ¡no dudes en escribirnos!
 
 ### Leyver Aaron Gonzalez Mendoza
 - **Correo:** [gonzalezleyver6@gmail.com](mailto:gonzalezleyver6@gmail.com)
 - **LinkedIn:** [Leyver Aaron Gonzalez Mendoza](https://www.linkedin.com/in/leyver-aaron-gonzalez-mendoza-7026a73a8/)
+
 ### Benjamin Alberto Arce Hernadez 
 - **Correo:** [233111887@upmh.edu.mx](mailto:233111887@upmh.edu.mx)
+
 ### Zaid Emanuel Hernandez Espinosa
 - **Correo:** [233111046@upmh.edu.mx](mailto:233111046@upmh.edu.mx)
