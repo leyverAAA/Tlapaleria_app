@@ -46,7 +46,9 @@ class CartScreen extends StatelessWidget {
                                     Text(item.product.name),
                                     Text(
                                       '\$${item.product.price.toStringAsFixed(2)}',
-                                      style: TextStyle(color: colorScheme.primary),
+                                      style: TextStyle(
+                                        color: colorScheme.primary,
+                                      ),
                                     ),
                                   ],
                                 ),

@@ -19,9 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
       if (!mounted) return;
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(
-          builder: (_) => const HomeScreen(),
-        ),
+        MaterialPageRoute(builder: (_) => const HomeScreen()),
       );
     });
   }
@@ -48,9 +46,9 @@ class _SplashScreenState extends State<SplashScreen> {
               Text(
                 'Tlapalería App',
                 style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                      color: colorScheme.onPrimary,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  color: colorScheme.onPrimary,
+                  fontWeight: FontWeight.bold,
+                ),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 24),

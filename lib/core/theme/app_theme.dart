@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 
 class AppTheme {
   static ThemeData light() {
-    final colorScheme = ColorScheme.fromSeed(
-      seedColor: const Color(0xFFFF8C00),
-      brightness: Brightness.light,
-    ).copyWith(
-      primary: const Color(0xFFFF8C00),
-      onPrimary: Colors.white,
-      primaryContainer: const Color(0xFFFFE0B2),
-      onPrimaryContainer: const Color(0xFF7A3E00),
-    );
+    final colorScheme =
+        ColorScheme.fromSeed(
+          seedColor: const Color(0xFFFF8C00),
+          brightness: Brightness.light,
+        ).copyWith(
+          primary: const Color(0xFFFF8C00),
+          onPrimary: Colors.white,
+          primaryContainer: const Color(0xFFFFE0B2),
+          onPrimaryContainer: const Color(0xFF7A3E00),
+        );
 
     return ThemeData(
       useMaterial3: true,

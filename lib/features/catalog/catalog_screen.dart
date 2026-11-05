@@ -43,7 +43,8 @@ class _CatalogScreenState extends State<CatalogScreen> {
     setState(() {
       _filtered = _products.where((p) {
         final matchesQuery =
-            _query.isEmpty || p.name.toLowerCase().contains(_query.toLowerCase());
+            _query.isEmpty ||
+            p.name.toLowerCase().contains(_query.toLowerCase());
         final matchesCategory = _category == null || p.category == _category;
         return matchesQuery && matchesCategory;
       }).toList();
