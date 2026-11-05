@@ -93,7 +93,7 @@ class MyHomePage extends StatelessWidget {
                     Text(
                       'Herramientas, insumos y materiales para cualquier proyecto',
                       style: textTheme.bodyLarge?.copyWith(
-                        color: colorScheme.onPrimary.withOpacity(0.95),
+                        color: colorScheme.onPrimary.withValues(alpha: 0.95),
                       ),
                     ),
                   ],
