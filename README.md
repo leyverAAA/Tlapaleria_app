@@ -20,7 +20,9 @@ Aplicación móvil tipo **POS (Punto de Venta)** para una tlapalería/ferreterí
 ## Documentación
 - [Definición del proyecto](docs/DEFINICION_PROYECTO.md) — problema, usuarios, alcance MVP, objetivos y requisitos priorizados.
 - [Bocetos / Wireframes](docs/BOCETOS.md) — flujo de navegación y descripción de pantallas.
+- [Checklist de entregables Etapa 1](docs/ENTREGABLES_ETAPA1.md) — estado de entrega, capturas y Ruta A.
 - [Bitácora de IA](AI_LOG.md) — registro de usos permitidos de inteligencia artificial.
+
 
 ## Ruta elegida
 - [x] Ruta A: Cliente real
@@ -146,7 +148,7 @@ flutter run
 ```
 
 ## Capturas
-Agregar capturas de pantalla de la app funcionando (requisito de entrega). Sugerido:
+Agregar capturas reales de la app funcionando (requisito de entrega). Ver guía: [`docs/capturas/README.md`](docs/capturas/README.md).
 
 | Pantalla | Archivo sugerido |
 |---|---|
@@ -158,11 +160,13 @@ Agregar capturas de pantalla de la app funcionando (requisito de entrega). Suger
 
 > También se puede adjuntar un video corto o el APK generado por CI (artifact `app-debug-apk`).
 
+
 ## Evidencia Ruta A (Cliente real)
-Para cumplir con la rúbrica de Ruta A, documentar en `docs/`:
-- Evidencia de al menos 2 reuniones con el cliente (minutas, mensajes o fotos) y requisitos confirmados.
-- Cómo la app responde a necesidades reales del cliente (decisiones justificadas).
-- Validación con el cliente (prototipo/MVP probado), retroalimentación y plan para atenderla en Etapa 2.
+Completar con **evidencia real** (no inventar datos). Plantillas listas en `docs/evidencia_ruta_a/`:
+- [01_minutas_reuniones.md](docs/evidencia_ruta_a/01_minutas_reuniones.md) — ≥ 2 reuniones, requisitos confirmados y evidencias.
+- [02_necesidades_y_decisiones.md](docs/evidencia_ruta_a/02_necesidades_y_decisiones.md) — necesidades reales y decisiones justificadas.
+- [03_validacion_cliente.md](docs/evidencia_ruta_a/03_validacion_cliente.md) — validación del MVP, retroalimentación y plan Etapa 2.
+
 
 ## Decisiones técnicas
 - **Provider** para el estado de la venta (`CartProvider`: items, cantidades y total), con lógica simple estilo base Viveroa.
