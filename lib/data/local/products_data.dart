@@ -8,7 +8,9 @@ class ProductsData {
       price: 85.0,
       category: 'Herramientas',
       description: 'Martillo de acero con mango ergonómico.',
-      image: 'assets/images/hammer.png',
+      image: 'assets/images/Logo.png',
+      stock: 12,
+      minStock: 5,
     ),
     Product(
       id: '2',
@@ -16,7 +18,9 @@ class ProductsData {
       price: 35.0,
       category: 'Herramientas',
       description: 'Desarmador plano de 6 pulgadas.',
-      image: 'assets/images/screwdriver.png',
+      image: 'assets/images/Logo.png',
+      stock: 4,
+      minStock: 5,
     ),
     Product(
       id: '3',
@@ -24,7 +28,9 @@ class ProductsData {
       price: 60.0,
       category: 'Medición',
       description: 'Cinta métrica de 5 metros.',
-      image: 'assets/images/tape.png',
+      image: 'assets/images/Logo.png',
+      stock: 8,
+      minStock: 3,
     ),
     Product(
       id: '4',
@@ -32,7 +38,9 @@ class ProductsData {
       price: 45.0,
       category: 'Fijación',
       description: 'Paquete de tornillos para madera.',
-      image: 'assets/images/screws.png',
+      image: 'assets/images/Logo.png',
+      stock: 2,
+      minStock: 6,
     ),
     Product(
       id: '5',
@@ -40,7 +48,9 @@ class ProductsData {
       price: 30.0,
       category: 'Protección',
       description: 'Guantes resistentes para trabajo pesado.',
-      image: 'assets/images/gloves.png',
+      image: 'assets/images/Logo.png',
+      stock: 15,
+      minStock: 4,
     ),
     Product(
       id: '6',
@@ -48,7 +58,9 @@ class ProductsData {
       price: 120.0,
       category: 'Herramientas',
       description: 'Llave ajustable de 10 pulgadas.',
-      image: 'assets/images/wrench.png',
+      image: 'assets/images/Logo.png',
+      stock: 3,
+      minStock: 3,
     ),
   ];
 }

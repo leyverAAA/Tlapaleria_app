@@ -6,20 +6,20 @@
 Se ha optado por desarrollar la aplicación para un cliente real (Tlapalería), con el objetivo de digitalizar su catálogo de productos y facilitar la consulta de los mismos.
 
 ## Problema
-Muchas tlapalerías aún manejan su inventario y catálogo de forma física, lo cual dificulta la consulta rápida de productos, precios y existencias para los clientes. Esto genera pérdida de tiempo tanto para el vendedor como para el comprador.
+Muchas tlapalerías manejan su inventario de forma manual (cuadernos, hojas o memoria), lo que dificulta conocer existencias reales, detectar productos con stock bajo y registrar entradas/salidas de forma rápida. Esto provoca faltantes, compras tardías y desorganización en la gestión diaria.
 
 ## Usuarios
-- **Clientes**: Personas que desean consultar el catálogo de productos, sus precios y agregar productos a su carrito de compras.
-- **Vendedor/Administrador**: Persona encargada de la tlapalería que podrá gestionar el catálogo de productos (Etapa 2).
+- **Encargado/Vendedor de la tlapalería**: Consulta el inventario, revisa existencias, identifica productos con stock bajo y actualiza cantidades.
+- **Administrador (Etapa 2)**: Gestionará catálogo, usuarios y sincronización con Firebase.
 
 ## Alcance del MVP (Etapa 1)
 Para esta primera etapa, el alcance será el siguiente:
 
 - **Flujo de entrada**: Pantalla Splash para dar identidad a la aplicación.
-- **Inicio**: Pantalla Home con mensaje de bienvenida.
-- **Catálogo**: Listado de productos de la tlapalería con opción de búsqueda y filtrado por categoría.
-- **Detalle de producto**: Pantalla con información completa del producto seleccionada, recibiendo el objeto por argumentos.
-- **Carrito de compras**: Lista de productos agregados, modificación de cantidades, total a pagar y opción de "Finalizar compra" (simulado).
+- **Inicio/Panel**: Pantalla Home con resumen de gestión y alertas de stock bajo.
+- **Inventario/Catálogo**: Listado de productos con búsqueda y filtrado por categoría, mostrando existencias.
+- **Detalle de producto**: Pantalla con información y acciones para ajustar stock (recibe argumentos).
+- **Alertas de stock bajo**: Pantalla con productos que requieren reabastecimiento.
 - **Datos locales**: Todos los productos estarán almacenados localmente, sin conexión a base de datos externa.
 - **Arquitectura preparada**: Estructura lista para migrar a Firebase en la Etapa 2.
 
