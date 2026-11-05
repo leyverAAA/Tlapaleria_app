@@ -1,0 +1,54 @@
+import '../../models/product.dart';
+
+class ProductsData {
+  static const List<Product> products = [
+    Product(
+      id: '1',
+      name: 'Martillo',
+      price: 85.0,
+      category: 'Herramientas',
+      description: 'Martillo de acero con mango ergonómico.',
+      image: 'assets/images/hammer.png',
+    ),
+    Product(
+      id: '2',
+      name: 'Desarmador plano',
+      price: 35.0,
+      category: 'Herramientas',
+      description: 'Desarmador plano de 6 pulgadas.',
+      image: 'assets/images/screwdriver.png',
+    ),
+    Product(
+      id: '3',
+      name: 'Cinta métrica',
+      price: 60.0,
+      category: 'Medición',
+      description: 'Cinta métrica de 5 metros.',
+      image: 'assets/images/tape.png',
+    ),
+    Product(
+      id: '4',
+      name: 'Tornillos (100 pzas)',
+      price: 45.0,
+      category: 'Fijación',
+      description: 'Paquete de tornillos para madera.',
+      image: 'assets/images/screws.png',
+    ),
+    Product(
+      id: '5',
+      name: 'Guantes de trabajo',
+      price: 30.0,
+      category: 'Protección',
+      description: 'Guantes resistentes para trabajo pesado.',
+      image: 'assets/images/gloves.png',
+    ),
+    Product(
+      id: '6',
+      name: 'Llave inglesa',
+      price: 120.0,
+      category: 'Herramientas',
+      description: 'Llave ajustable de 10 pulgadas.',
+      image: 'assets/images/wrench.png',
+    ),
+  ];
+}

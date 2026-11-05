@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import 'main.dart';
+import '../home/home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -17,9 +17,10 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Timer(const Duration(seconds: 2), () {
       if (!mounted) return;
-      Navigator.of(context).pushReplacement(
+      Navigator.pushReplacement(
+        context,
         MaterialPageRoute(
-          builder: (_) => const MyHomePage(title: 'Tlapalería App'),
+          builder: (_) => const HomeScreen(),
         ),
       );
     });
@@ -35,31 +36,17 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              Icons.hardware_outlined,
-              size: 80,
-              color: colorScheme.onPrimary,
-            ),
+            Icon(Icons.hardware, size: 80, color: colorScheme.onPrimary),
             const SizedBox(height: 16),
             Text(
               'Tlapalería App',
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                color: colorScheme.onPrimary,
-                fontWeight: FontWeight.w700,
-                letterSpacing: 0.5,
-              ),
+                    color: colorScheme.onPrimary,
+                    fontWeight: FontWeight.bold,
+                  ),
             ),
-            const SizedBox(height: 32),
-            SizedBox(
-              width: 24,
-              height: 24,
-              child: CircularProgressIndicator(
-                strokeWidth: 2,
-                valueColor: AlwaysStoppedAnimation<Color>(
-                  colorScheme.onPrimary,
-                ),
-              ),
-            ),
+            const SizedBox(height: 24),
+            CircularProgressIndicator(color: colorScheme.onPrimary),
           ],
         ),
       ),

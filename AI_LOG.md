@@ -13,6 +13,7 @@ Solo se documenta uso permitido: explicación de conceptos/errores, sugerencias,
 | 2026-10-26 | Equipo | Revisión de sintaxis Dart/Flutter y corrección de errores | Revisión | Validar código propio sin generar módulos completos | Se aplicaron correcciones menores de forma manual tras entenderlas. | Sí |
 | 2026-11-04 | Leyver Aaron Gonzalez Mendoza | Mejora del diseño del HomeScreen con UI/UX Pro Max | Sugerencia de diseño | Buscar paleta de colores adecuada para una tlapalería/ferretería | Se adaptaron los colores sugeridos (#15803D) al tema de la app, manteniendo el diseño simple y fiel al ejemplo. | Sí |
 | 2026-11-04 | Leyver Aaron Gonzalez Mendoza | Creación de SplashScreen | Sugerencia/Fragmento | Implementar pantalla de entrada siguiendo las buenas prácticas | Se creó el SplashScreen con diseño minimalista, adaptado a las necesidades del proyecto. | Sí |
+| 2026-11-05 | Equipo | Implementación de funcionalidades faltantes (catálogo, detalle, carrito, Provider, modelo/repositorio) | Sugerencia/Estructura | Completar requisitos técnicos de la Etapa 1 siguiendo patrón simple visto en clase | Se implementó arquitectura feature-first, se revisó y adaptó el código para mantenerlo simple y funcional. | Sí |
 
 ## Notas
 - Todo el código generado con apoyo de IA ha sido revisado, adaptado y puede ser explicado por cualquier integrante del equipo.

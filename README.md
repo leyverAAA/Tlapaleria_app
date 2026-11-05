@@ -91,27 +91,27 @@ Aplicación móvil para catálogo de productos de ferretería/tlapalería. Permi
 
 ## Requisitos cumplidos (Etapa 1)
 
-**Estado: 1 de 10 completados.**
+**Estado: 10 de 10 completados.**
 
 ### 1. Flujo y navegación
-- [X] Flujo de entrada (SplashScreen)
-- [ ] Navegación entre >= 4 pantallas (Splash, Home, Catálogo, Detalle, Carrito)
+- [x] Flujo de entrada (SplashScreen)
+- [x] Navegación entre >= 4 pantallas (Splash, Home, Catálogo, Detalle, Carrito)
 
 ### 2. Catálogo y detalle de producto
-- [ ] Listado/catálogo con búsqueda y filtros por categoría
-- [ ] Pantalla de detalle que recibe argumentos (Product)
+- [x] Listado/catálogo con búsqueda y filtros por categoría
+- [x] Pantalla de detalle que recibe argumentos (Product)
 
 ### 3. Estado y tema global
-- [ ] Estado compartido con Provider (CartProvider)
-- [ ] Tema global (AppTheme)
+- [x] Estado compartido con Provider (CartProvider)
+- [x] Tema global (AppTheme)
 
 ### 4. Componentes y assets
-- [ ] Al menos 2 componentes reutilizables (ProductCard, CustomButton)
-- [ ] Assets declarados en pubspec.yaml
+- [x] Al menos 2 componentes reutilizables (ProductCard, CustomButton)
+- [x] Assets declarados en pubspec.yaml
 
 ### 5. Datos y arquitectura
-- [ ] Capa de datos con Model (Product) y Repository (ProductRepository)
-- [ ] Arquitectura organizada (core/, features/, models/, data/)
+- [x] Capa de datos con Model (Product) y Repository (ProductRepository)
+- [x] Arquitectura organizada (core/, features/, models/, data/)
 
 
 ## Arquitectura
