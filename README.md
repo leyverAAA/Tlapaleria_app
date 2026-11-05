@@ -1,4 +1,20 @@
+<div align="center">
+
 # Tlapalería App - Proyecto Final Flutter (Etapa 1)
+
+[![CI](https://github.com/leyverAAA/Tlapaleria_app/actions/workflows/flutter_ci.yml/badge.svg)](https://github.com/leyverAAA/Tlapaleria_app/actions/workflows/flutter_ci.yml)
+
+<img src="modules\inicio.png">
+
+</div>
+
+<p align="center">
+  <a href="#demo">Demo</a> ·
+  <a href="#quick-start">Quick Start</a> ·
+  <a href="#core-capabilities">Capacidades</a> ·
+  <a href="#como-funciona">Cómo funciona</a> ·
+  <a href="#documentacion">Documentación</a>
+</p>
 
 ## Descripción
 Aplicación móvil para catálogo de productos de ferretería/tlapalería. Permite visualizar productos, buscar y filtrar por categoría, ver detalle, agregar al carrito y simular compra. Desarrollada con Flutter siguiendo arquitectura lista para conectar a Firebase en Etapa 2.
@@ -115,7 +131,8 @@ lib/
 - Dart
 - provider: ^6.1.5+1
 
-## Cómo ejecutar
+## Quick Start
+
 ```bash
 flutter pub get
 flutter run
