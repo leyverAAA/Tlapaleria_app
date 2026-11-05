@@ -33,21 +33,30 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: colorScheme.primary,
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(Icons.hardware, size: 80, color: colorScheme.onPrimary),
-            const SizedBox(height: 16),
-            Text(
-              'Tlapalería App',
-              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                    color: colorScheme.onPrimary,
-                    fontWeight: FontWeight.bold,
-                  ),
-            ),
-            const SizedBox(height: 24),
-            CircularProgressIndicator(color: colorScheme.onPrimary),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.all(24),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                'assets/images/Logo.png',
+                width: 140,
+                height: 140,
+                fit: BoxFit.contain,
+              ),
+              const SizedBox(height: 20),
+              Text(
+                'Tlapalería App',
+                style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                      color: colorScheme.onPrimary,
+                      fontWeight: FontWeight.bold,
+                    ),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 24),
+              CircularProgressIndicator(color: colorScheme.onPrimary),
+            ],
+          ),
         ),
       ),
     );
