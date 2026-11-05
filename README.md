@@ -31,7 +31,7 @@ Aplicación móvil tipo **POS (Punto de Venta)** para una tlapalería/ferreterí
 ## Integrantes
 - Integrante 1: Leyver Aaron Gonzalez Mendoza
 - Integrante 2: Zaid Emanuel Hernandez Espinosa
-- Integrante 3: Benjamin Alberto Arce Hernadez 
+- Integrante 3: Benjamin Alberto Arce Hernandez
 
 ## Plan de Trabajo, Roles y Tareas
 
@@ -41,7 +41,7 @@ Aplicación móvil tipo **POS (Punto de Venta)** para una tlapalería/ferreterí
 | :-- | :-- | :-- |
 | **Coordinación / Git / Documentación** | Leyver Aaron Gonzalez Mendoza | Organización de reuniones, manejo de ramas y Pull Requests, revisión de commits, mantenimiento del `README.md`, `AI_LOG.md` y bitácora del equipo. |
 | **UI/UX / Diseño** | Zaid Emanuel Hernandez Espinosa | Diseño de interfaces, tema global, componentes reutilizables, assets propios y asegurar la coherencia visual de la aplicación. |
-| **Arquitectura / Datos / Navegación** | Benjamin Alberto Arce Hernadez | Estructura del proyecto, modelos, repositorios, navegación entre pantallas, estado compartido con Provider e integración general. | 
+| **Arquitectura / Datos / Navegación** | Benjamin Alberto Arce Hernandez | Estructura del proyecto, modelos, repositorios, navegación entre pantallas, estado compartido con Provider e integración general. | 
 
 
 
@@ -68,7 +68,7 @@ Aplicación móvil tipo **POS (Punto de Venta)** para una tlapalería/ferreterí
 | Pulido Visual | Revisar espaciados, estados vacíos, responsividad y detalles visuales. | UI pulida | Completado |
 
 
-#### 3. Benjamin Alberto Arce Hernadez (Arquitectura / Datos / Navegación)
+#### 3. Benjamin Alberto Arce Hernandez (Arquitectura / Datos / Navegación)
 | Tarea | Descripción | Entregable | Estado |
 | :-- | :-- | :-- | :-- |
 | Modelo de Datos | Crear el modelo para los productos de la tlapalería. | `lib/models/product.dart` | Completado (base) |
@@ -222,7 +222,7 @@ Si tienes alguna pregunta o feedback, ¡no dudes en escribirnos!
 - **Correo:** [gonzalezleyver6@gmail.com](mailto:gonzalezleyver6@gmail.com)
 - **LinkedIn:** [Leyver Aaron Gonzalez Mendoza](https://www.linkedin.com/in/leyver-aaron-gonzalez-mendoza-7026a73a8/)
 
-### Benjamin Alberto Arce Hernadez 
+### Benjamin Alberto Arce Hernandez
 - **Correo:** [233111887@upmh.edu.mx](mailto:233111887@upmh.edu.mx)
 
 ### Zaid Emanuel Hernandez Espinosa
