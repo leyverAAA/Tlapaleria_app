@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
+import '../../core/routes/app_routes.dart';
+import '../../core/widgets/cart_action_button.dart';
 import '../../core/widgets/product_card.dart';
 import '../../data/repositories/product_repository.dart';
 import '../../models/product.dart';
-import '../cart/cart_provider.dart';
-import '../cart/cart_screen.dart';
-import '../product_detail/product_detail_screen.dart';
 
 class CatalogScreen extends StatefulWidget {
   const CatalogScreen({super.key});
@@ -39,8 +37,8 @@ class _CatalogScreenState extends State<CatalogScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final cartCount = context.watch<CartProvider>().itemCount;
     final categories = ['Todos', ..._products.map((p) => p.category).toSet()];
+
     final filtered = _products.where((p) {
       final matchesQuery =
           _query.isEmpty || p.name.toLowerCase().contains(_query.toLowerCase());
@@ -51,34 +49,9 @@ class _CatalogScreenState extends State<CatalogScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Productos'),
-        actions: [
-          IconButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => const CartScreen()),
-              );
-            },
-            icon: Stack(
-              children: [
-                const Icon(Icons.shopping_cart),
-                if (cartCount > 0)
-                  Positioned(
-                    right: 0,
-                    top: 0,
-                    child: CircleAvatar(
-                      radius: 8,
-                      child: Text(
-                        '$cartCount',
-                        style: const TextStyle(fontSize: 10),
-                      ),
-                    ),
-                  ),
-              ],
-            ),
-          ),
-        ],
+        actions: const [CartActionButton(icon: Icons.shopping_cart)],
       ),
+
       body: Column(
         children: [
           Padding(
@@ -126,15 +99,11 @@ class _CatalogScreenState extends State<CatalogScreen> {
                       final product = filtered[index];
                       return ProductCard(
                         product: product,
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (_) =>
-                                  ProductDetailScreen(product: product),
-                            ),
-                          );
-                        },
+                        onTap: () => Navigator.pushNamed(
+                          context,
+                          AppRoutes.detail,
+                          arguments: product,
+                        ),
                       );
                     },
                   ),

@@ -1,53 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
-import '../cart/cart_provider.dart';
-import '../cart/cart_screen.dart';
-import '../catalog/catalog_screen.dart';
+import '../../core/routes/app_routes.dart';
+import '../../core/widgets/cart_action_button.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final itemCount = context.watch<CartProvider>().itemCount;
     final colorScheme = Theme.of(context).colorScheme;
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('POS Tlapalería'),
-        actions: [
-          IconButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => const CartScreen()),
-              );
-            },
-            icon: Stack(
-              children: [
-                const Icon(Icons.point_of_sale),
-                if (itemCount > 0)
-                  Positioned(
-                    right: 0,
-                    top: 0,
-                    child: CircleAvatar(
-                      radius: 8,
-                      backgroundColor: colorScheme.error,
-                      child: Text(
-                        '$itemCount',
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 10,
-                        ),
-                      ),
-                    ),
-                  ),
-              ],
-            ),
-            tooltip: 'Venta actual',
-          ),
-        ],
+        actions: const [CartActionButton()],
       ),
       body: SafeArea(
         child: Padding(
@@ -79,12 +45,8 @@ class HomeScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton.icon(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (_) => const CatalogScreen()),
-                    );
-                  },
+                  onPressed: () =>
+                      Navigator.pushNamed(context, AppRoutes.catalog),
                   icon: const Icon(Icons.add_shopping_cart),
                   label: const Text('Nueva venta / Agregar productos'),
                 ),

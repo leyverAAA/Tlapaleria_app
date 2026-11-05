@@ -122,12 +122,16 @@ Aplicación móvil tipo **POS (Punto de Venta)** para una tlapalería/ferreterí
 ## Arquitectura
 ```
 lib/
-├── core/           # Constantes, tema y widgets reutilizables
+├── core/
+│   ├── routes/     # Navegación centralizada (AppRoutes, onGenerateRoute para argumentos)
+│   ├── theme/      # Tema global
+│   └── widgets/    # Componentes reutilizables (ProductCard, CustomButton, CartActionButton)
 ├── data/           # Datos locales y repositorios
 ├── features/       # Módulos por funcionalidad (splash, home, catalog, product_detail, cart/venta)
 ├── models/         # Modelos de datos
-└── main.dart       # Configuración de Provider y app
+└── main.dart       # Configuración de Provider y rutas
 ```
+
 
 ## Tecnologías
 - Flutter 3.x
@@ -162,9 +166,10 @@ Para cumplir con la rúbrica de Ruta A, documentar en `docs/`:
 
 ## Decisiones técnicas
 - **Provider** para el estado de la venta (`CartProvider`: items, cantidades y total), con lógica simple estilo base Viveroa.
+- **Navegación centralizada**: `AppRoutes` con rutas con nombre; `onGenerateRoute` para pasar argumentos al detalle (`Product`), manteniendo el flujo POS claro y consistente.
 - **Repository pattern**: `ProductRepository` lee de datos locales; en Etapa 2 se reemplaza por fuente remota (Firebase) sin modificar UI.
 - **Feature-first**: Organización por funcionalidad para escalabilidad.
-- **Componentes reutilizables**: `ProductCard` y `CustomButton` para mantener consistencia visual.
+- **Componentes reutilizables**: `ProductCard`, `CustomButton` y `CartActionButton` (acceso a venta con contador).
 - **Enfoque POS**: resuelve la necesidad del cliente de registrar ventas rápidas (consulta → agregar → total → cobro simulado).
 
 ## Backlog para Etapa 2

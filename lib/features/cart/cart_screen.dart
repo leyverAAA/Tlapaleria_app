@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../core/routes/app_routes.dart';
 import '../../core/widgets/custom_button.dart';
 import 'cart_provider.dart';
 
@@ -121,10 +122,11 @@ class CartScreen extends StatelessWidget {
                           icon: Icons.point_of_sale,
                           onPressed: () {
                             final total = cart.total;
+                            final navigator = Navigator.of(context);
                             cart.clear();
-                            showDialog(
+                            showDialog<void>(
                               context: context,
-                              builder: (_) => AlertDialog(
+                              builder: (dialogContext) => AlertDialog(
                                 title: const Text('Venta registrada'),
                                 content: Text(
                                   'Total cobrado: \$${total.toStringAsFixed(2)}',
@@ -132,8 +134,10 @@ class CartScreen extends StatelessWidget {
                                 actions: [
                                   TextButton(
                                     onPressed: () {
-                                      Navigator.pop(context);
-                                      Navigator.pop(context);
+                                      Navigator.of(dialogContext).pop();
+                                      navigator.popUntil(
+                                        ModalRoute.withName(AppRoutes.home),
+                                      );
                                     },
                                     child: const Text('Aceptar'),
                                   ),

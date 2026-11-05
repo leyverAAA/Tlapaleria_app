@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'core/routes/app_routes.dart';
 import 'core/theme/app_theme.dart';
 import 'features/cart/cart_provider.dart';
-import 'features/splash/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +20,9 @@ class MyApp extends StatelessWidget {
         title: 'Tlapalería App',
         debugShowCheckedModeBanner: false,
         theme: AppTheme.light(),
-        home: const SplashScreen(),
+        initialRoute: AppRoutes.splash,
+        routes: AppRoutes.routes,
+        onGenerateRoute: AppRoutes.onGenerateRoute,
       ),
     );
   }
