@@ -151,6 +151,19 @@ _Agregar capturas de pantalla aquí (splash, home, catálogo, detalle, carrito).
 ## Fuentes externas
 Sin código copiado sin citar. Componentes y estructura propios basados en lo visto en clase (Vivero+).
 
+## CI/CD Pipeline
+
+Este proyecto cuenta con un pipeline de Integración Continua (CI) configurado con **GitHub Actions**.
+
+### Características
+- **Análisis estático**: Verificación de formato con `dart format` y análisis con `flutter analyze`
+- **Pruebas**: Ejecución automática de tests con `flutter test`
+- **Construcción**: Generación de APK en modo debug
+- **Artifacts**: Almacenamiento del APK generado para descarga
+- **Triggers**: Se ejecuta en pushes a `main`, `develop` o ramas `feature/**`, y en Pull Requests hacia `main` o `develop`
+
+El archivo de configuración se encuentra en: `.github/workflows/flutter_ci.yml`
+
 ## IA Log
 Ver [AI_LOG.md](AI_LOG.md)
 
