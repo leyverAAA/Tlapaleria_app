@@ -9,10 +9,8 @@
 </div>
 
 <p align="center">
-  <a href="#demo">Demo</a> ·
-  <a href="#quick-start">Quick Start</a> ·
-  <a href="#core-capabilities">Capacidades</a> ·
-  <a href="#como-funciona">Cómo funciona</a> ·
+  <a href="#inicio-rapido">Inicio rapido</a> ·
+  <a href="AI_LOG.md">AI_LOG</a> ·
   <a href="#documentacion">Documentación</a>
 </p>
 
@@ -131,7 +129,7 @@ lib/
 - Dart
 - provider: ^6.1.5+1
 
-## Quick Start
+## inicio rapido
 
 ```bash
 flutter pub get
@@ -139,7 +137,8 @@ flutter run
 ```
 
 ## Capturas
-_Agregar capturas de pantalla aquí (splash, home, catálogo, detalle, carrito)._
+
+
 
 ## Decisiones técnicas
 - **Provider** para manejo de carrito (fácil migración y cumple requisito).
