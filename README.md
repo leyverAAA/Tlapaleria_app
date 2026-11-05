@@ -4,18 +4,23 @@
 
 [![CI](https://github.com/leyverAAA/Tlapaleria_app/actions/workflows/flutter_ci.yml/badge.svg)](https://github.com/leyverAAA/Tlapaleria_app/actions/workflows/flutter_ci.yml)
 
-<img src="modules\inicio.png">
+<img src="assets/images/Bienvenida.png" alt="Tlapalería App - Bienvenida" width="420">
 
 </div>
 
 <p align="center">
-  <a href="#inicio-rapido">Inicio rapido</a> ·
-  <a href="AI_LOG.md">AI_LOG</a> ·
-  <a href="#documentacion">Documentación</a>
+  <a href="#inicio-rapido">Inicio rápido</a> ·
+  <a href="#documentación">Documentación</a> ·
+  <a href="AI_LOG.md">AI_LOG</a>
 </p>
 
 ## Descripción
 Aplicación móvil para catálogo de productos de ferretería/tlapalería. Permite visualizar productos, buscar y filtrar por categoría, ver detalle, agregar al carrito y simular compra. Desarrollada con Flutter siguiendo arquitectura lista para conectar a Firebase en Etapa 2.
+
+## Documentación
+- [Definición del proyecto](docs/DEFINICION_PROYECTO.md) — problema, usuarios, alcance MVP, objetivos y requisitos priorizados.
+- [Bocetos / Wireframes](docs/BOCETOS.md) — flujo de navegación y descripción de pantallas.
+- [Bitácora de IA](AI_LOG.md) — registro de usos permitidos de inteligencia artificial.
 
 ## Ruta elegida
 - [x] Ruta A: Cliente real
@@ -43,32 +48,32 @@ Aplicación móvil para catálogo de productos de ferretería/tlapalería. Permi
 #### 1. Leyver Aaron Gonzalez Mendoza (Coordinación / Git / Documentación)
 | Tarea | Descripción | Entregable | Estado |
 | :-- | :-- | :-- | :-- |
-| Definición del proyecto | Plasmar el problema, usuarios, alcance del MVP y justificación de la ruta elegida. | Documento de definición | Pendiente |
-| Bocetos y Wireframes | Realizar bocetos de todas las pantallas a implementar. | Bocetos (Digital o Físicos) | Pendiente |
-| Gestión de GitHub | Crear y administrar el repositorio, ramas por funcionalidad y asegurar commits de los 3 integrantes. | Repositorio organizado | Pendiente |
-| Documentación | Mantener y actualizar el `README.md` con toda la información requerida. | `README.md` Completo | Pendiente |
-| Bitácora de IA | Documentar todos los usos de IA permitidos en la rúbrica. | `AI_LOG.md` actualizado | Pendiente |
+| Definición del proyecto | Plasmar el problema, usuarios, alcance del MVP y justificación de la ruta elegida. | [docs/DEFINICION_PROYECTO.md](docs/DEFINICION_PROYECTO.md) | Completado |
+| Bocetos y Wireframes | Realizar bocetos de todas las pantallas a implementar. | [docs/BOCETOS.md](docs/BOCETOS.md) | Completado |
+| Gestión de GitHub | Crear y administrar el repositorio, ramas por funcionalidad y asegurar commits de los 3 integrantes. | Repositorio + CI configurado | En progreso |
+| Documentación | Mantener y actualizar el `README.md` con toda la información requerida. | `README.md` | Completado |
+| Bitácora de IA | Documentar todos los usos de IA permitidos en la rúbrica. | [AI_LOG.md](AI_LOG.md) | Completado |
 
 
 #### 2. Zaid Emanuel Hernandez Espinosa (UI/UX / Diseño)
 | Tarea | Descripción | Entregable | Estado |
 | :-- | :-- | :-- | :-- |
-| Tema Global | Crear el tema de la aplicación con colores, tipografía y estilos. | `core/theme/app_theme.dart` | Pendiente |
-| Componentes Reutilizables | Crear al menos 2 componentes reutilizables. (Ej: `ProductCard` y `CustomButton`) | `core/widgets/` | Pendiente |
-| Diseño de Pantallas | Encargarse de la maquetación y estilos de `SplashScreen`, `HomeScreen`, `CatalogScreen`, `ProductDetailScreen` y `CartScreen`. | Pantallas con diseño coherente | Pendiente |
-| Assets | Añadir imágenes propias para los productos y declararlas en `pubspec.yaml`. | `assets/images/` y `pubspec.yaml` | Pendiente |
-| Pulido Visual | Revisar espaciados, estados vacíos, responsividad y detalles visuales. | UI pulida | Pendiente |
+| Tema Global | Crear el tema de la aplicación con colores, tipografía y estilos. | `lib/core/theme/app_theme.dart` | Completado (base) |
+| Componentes Reutilizables | Crear al menos 2 componentes reutilizables. (Ej: `ProductCard` y `CustomButton`) | `lib/core/widgets/` | Completado (base) |
+| Diseño de Pantallas | Encargarse de la maquetación y estilos de `SplashScreen`, `HomeScreen`, `CatalogScreen`, `ProductDetailScreen` y `CartScreen`. | Pantallas implementadas | Completado (base) |
+| Assets | Añadir imágenes propias para los productos y declararlas en `pubspec.yaml`. | `assets/images/`, `pubspec.yaml` | Completado (base) |
+| Pulido Visual | Revisar espaciados, estados vacíos, responsividad y detalles visuales. | UI pulida | En progreso |
 
 
 #### 3. Benjamin Alberto Arce Hernadez (Arquitectura / Datos / Navegación)
 | Tarea | Descripción | Entregable | Estado |
 | :-- | :-- | :-- | :-- |
-| Modelo de Datos | Crear el modelo para los productos de la tlapalería. | `models/product.dart` | Pendiente |
-| Datos Locales | Crear una lista fija de productos para simular la base de datos. | `data/local/products_data.dart` | Pendiente |
-| Repositorio | Implementar el repositorio para obtener los productos (Listo para migrar a Firebase en Etapa 2). | `data/repositories/product_repository.dart` | Pendiente |
-| Estado Compartido | Implementar `CartProvider` con Provider para manejar el carrito, cantidades y total. | `features/cart/cart_provider.dart` | Pendiente |
-| Navegación | Configurar rutas, navegación entre pantallas y paso de argumentos al detalle del producto. | Sistema de navegación funcional | Pendiente |
-| Integración | Conectar todos los módulos en `main.dart` utilizando `MultiProvider`. | Aplicación integrada y funcional | Pendiente |
+| Modelo de Datos | Crear el modelo para los productos de la tlapalería. | `lib/models/product.dart` | Completado (base) |
+| Datos Locales | Crear una lista fija de productos para simular la base de datos. | `lib/data/local/products_data.dart` | Completado (base) |
+| Repositorio | Implementar el repositorio para obtener los productos (Listo para migrar a Firebase en Etapa 2). | `lib/data/repositories/product_repository.dart` | Completado (base) |
+| Estado Compartido | Implementar `CartProvider` con Provider para manejar el carrito, cantidades y total. | `lib/features/cart/cart_provider.dart` | Completado (base) |
+| Navegación | Configurar rutas, navegación entre pantallas y paso de argumentos al detalle del producto. | Navegación funcional | Completado (base) |
+| Integración | Conectar todos los módulos en `main.dart` utilizando `MultiProvider`. | `lib/main.dart` | Completado (base) |
 
 
 ### Cronograma
@@ -129,7 +134,7 @@ lib/
 - Dart
 - provider: ^6.1.5+1
 
-## inicio rapido
+## Inicio rápido
 
 ```bash
 flutter pub get
@@ -137,8 +142,23 @@ flutter run
 ```
 
 ## Capturas
+Agregar capturas de pantalla de la app funcionando (requisito de entrega). Sugerido:
 
+| Pantalla | Archivo sugerido |
+|---|---|
+| Splash | `docs/capturas/splash.png` |
+| Home | `docs/capturas/home.png` |
+| Catálogo (búsqueda/filtro) | `docs/capturas/catalogo.png` |
+| Detalle de producto | `docs/capturas/detalle.png` |
+| Carrito | `docs/capturas/carrito.png` |
 
+> También se puede adjuntar un video corto o el APK generado por CI (artifact `app-debug-apk`).
+
+## Evidencia Ruta A (Cliente real)
+Para cumplir con la rúbrica de Ruta A, documentar en `docs/`:
+- Evidencia de al menos 2 reuniones con el cliente (minutas, mensajes o fotos) y requisitos confirmados.
+- Cómo la app responde a necesidades reales del cliente (decisiones justificadas).
+- Validación con el cliente (prototipo/MVP probado), retroalimentación y plan para atenderla en Etapa 2.
 
 ## Decisiones técnicas
 - **Provider** para manejo de carrito (fácil migración y cumple requisito).
