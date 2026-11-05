@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../core/routes/app_routes.dart';
 import '../../core/widgets/custom_button.dart';
 import '../../models/product.dart';
 import '../cart/cart_provider.dart';
@@ -60,8 +61,13 @@ class ProductDetailScreen extends StatelessWidget {
                 onPressed: () {
                   context.read<CartProvider>().add(product);
                   ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('Producto agregado a la venta'),
+                    SnackBar(
+                      content: const Text('Producto agregado a la venta'),
+                      action: SnackBarAction(
+                        label: 'Ver venta',
+                        onPressed: () =>
+                            Navigator.pushNamed(context, AppRoutes.cart),
+                      ),
                     ),
                   );
                 },
