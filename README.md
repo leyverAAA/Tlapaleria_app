@@ -4,7 +4,7 @@
 
 [![CI](https://github.com/leyverAAA/Tlapaleria_app/actions/workflows/flutter_ci.yml/badge.svg)](https://github.com/leyverAAA/Tlapaleria_app/actions/workflows/flutter_ci.yml)
 
-<img src="assets/images/Bienvenida.png" alt="Tlapalería App - Bienvenida" width="420">
+<img src="assets\images\Tlapalería App_ herramientas al alcance.png" alt="Tlapalería App - Bienvenida" >
 
 </div>
 
@@ -50,7 +50,7 @@ Aplicación móvil para catálogo de productos de ferretería/tlapalería. Permi
 | :-- | :-- | :-- | :-- |
 | Definición del proyecto | Plasmar el problema, usuarios, alcance del MVP y justificación de la ruta elegida. | [docs/DEFINICION_PROYECTO.md](docs/DEFINICION_PROYECTO.md) | Completado |
 | Bocetos y Wireframes | Realizar bocetos de todas las pantallas a implementar. | [docs/BOCETOS.md](docs/BOCETOS.md) | Completado |
-| Gestión de GitHub | Crear y administrar el repositorio, ramas por funcionalidad y asegurar commits de los 3 integrantes. | Repositorio + CI configurado | En progreso |
+| Gestión de GitHub | Crear y administrar el repositorio, ramas por funcionalidad y asegurar commits de los 3 integrantes. | Repositorio + CI configurado | Completado |
 | Documentación | Mantener y actualizar el `README.md` con toda la información requerida. | `README.md` | Completado |
 | Bitácora de IA | Documentar todos los usos de IA permitidos en la rúbrica. | [AI_LOG.md](AI_LOG.md) | Completado |
 
@@ -62,7 +62,7 @@ Aplicación móvil para catálogo de productos de ferretería/tlapalería. Permi
 | Componentes Reutilizables | Crear al menos 2 componentes reutilizables. (Ej: `ProductCard` y `CustomButton`) | `lib/core/widgets/` | Completado (base) |
 | Diseño de Pantallas | Encargarse de la maquetación y estilos de `SplashScreen`, `HomeScreen`, `CatalogScreen`, `ProductDetailScreen` y `CartScreen`. | Pantallas implementadas | Completado (base) |
 | Assets | Añadir imágenes propias para los productos y declararlas en `pubspec.yaml`. | `assets/images/`, `pubspec.yaml` | Completado (base) |
-| Pulido Visual | Revisar espaciados, estados vacíos, responsividad y detalles visuales. | UI pulida | En progreso |
+| Pulido Visual | Revisar espaciados, estados vacíos, responsividad y detalles visuales. | UI pulida | Completado |
 
 
 #### 3. Benjamin Alberto Arce Hernadez (Arquitectura / Datos / Navegación)
