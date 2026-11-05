@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../../core/routes/app_routes.dart';
-import '../../core/widgets/cart_action_button.dart';
-import '../../core/widgets/product_card.dart';
-import '../../data/repositories/product_repository.dart';
-import '../../models/product.dart';
+import '/core/routes/app_routes.dart';
+import '/core/widgets/cart_action_button.dart';
+import '/core/widgets/product_card.dart';
+import '/data/repositories/product_repository.dart';
+import '/models/product.dart';
 
 class CatalogScreen extends StatefulWidget {
   const CatalogScreen({super.key});

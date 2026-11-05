@@ -54,6 +54,7 @@ Aplicación móvil tipo **POS (Punto de Venta)** para una tlapalería/ferreterí
 | Bocetos y Wireframes | Realizar bocetos de todas las pantallas a implementar. | [docs/BOCETOS.md](docs/BOCETOS.md) | Completado |
 | Gestión de GitHub | Crear y administrar el repositorio, ramas por funcionalidad y asegurar commits de los 3 integrantes. | Repositorio + CI configurado | Completado |
 | Documentación | Mantener y actualizar el `README.md` con toda la información requerida. | `README.md` | Completado |
+| Busqueda y filtros | Creacion del buscador con filtros por categorias. | parte de `\lib\features\catalog\catalog_screen.dart`  | Completado |
 | Bitácora de IA | Documentar todos los usos de IA permitidos en la rúbrica. | [AI_LOG.md](AI_LOG.md) | Completado |
 
 

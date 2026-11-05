@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../core/routes/app_routes.dart';
-import '../../core/widgets/cart_action_button.dart';
+import '/core/routes/app_routes.dart';
+import '/core/widgets/cart_action_button.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

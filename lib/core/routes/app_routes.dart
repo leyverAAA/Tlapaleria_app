@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 
-import '../../features/cart/cart_screen.dart';
-import '../../features/catalog/catalog_screen.dart';
-import '../../features/home/home_screen.dart';
-import '../../features/product_detail/product_detail_screen.dart';
-import '../../features/splash/splash_screen.dart';
-import '../../models/product.dart';
+import '/features/cart/cart_screen.dart';
+import '/features/catalog/catalog_screen.dart';
+import '/features/home/home_screen.dart';
+import '/features/product_detail/product_detail_screen.dart';
+import '/features/splash/splash_screen.dart';
+import '/models/product.dart';
 
-/// Rutas con nombre para una navegación centralizada y clara.
-/// La lógica se mantiene simple (Navigator + Provider), estilo base.
 class AppRoutes {
   static const splash = '/';
   static const home = '/home';
@@ -23,7 +21,6 @@ class AppRoutes {
     cart: (_) => const CartScreen(),
   };
 
-  /// Maneja rutas que requieren argumentos (p. ej. detalle recibe [Product]).
   static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     if (settings.name == detail) {
       final product = settings.arguments;

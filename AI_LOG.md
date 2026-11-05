@@ -9,7 +9,7 @@ Solo se documenta uso permitido: explicación de conceptos/errores, sugerencias,
 
 | Fecha | Integrante | Consulta / Uso | Tipo de uso | Justificación | Resultado / Adaptación | ¿Entendido por el equipo? |
 |---|---|---|---|---|---|---|
-| 2026-10-26 | Leyver Aaron Gonzalez Mendoza | Generación de estructura base para cumplir con la rúbrica de la Etapa 1 | Sugerencia / Estructura | Acelerar el scaffolding siguiendo la arquitectura vista en clase (Vivero+) | Se adaptó la estructura feature-first propuesta, revisando cada archivo y entendiendo su funcionalidad. | Sí |
+| 2026-10-26 | Leyver Aaron Gonzalez Mendoza | Consulta de la estructura base y recomendaciones  | Sugerencia / Estructura | Acelerar el scaffolding siguiendo la arquitectura vista en clase (Vivero+) | Se adaptó la estructura feature-first propuesta, revisando cada archivo y entendiendo su funcionalidad. | Sí |
 | 2026-10-26 | Equipo | Revisión de sintaxis Dart/Flutter y corrección de errores | Revisión | Validar código propio sin generar módulos completos | Se aplicaron correcciones menores de forma manual tras entenderlas. | Sí |
 | 2026-11-04 | Leyver Aaron Gonzalez Mendoza | Mejora del diseño del HomeScreen con UI/UX Pro Max | Sugerencia de diseño | Buscar paleta de colores adecuada para una tlapalería/ferretería | Se adaptaron los colores sugeridos (#15803D) al tema de la app, manteniendo el diseño simple y fiel al ejemplo. | Sí |
 | 2026-11-04 | Leyver Aaron Gonzalez Mendoza | Creación de SplashScreen | Sugerencia/Fragmento | Implementar pantalla de entrada siguiendo las buenas prácticas | Se creó el SplashScreen con diseño minimalista, adaptado a las necesidades del proyecto. | Sí |

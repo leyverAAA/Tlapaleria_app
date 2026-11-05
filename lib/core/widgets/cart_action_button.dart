@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../features/cart/cart_provider.dart';
+import '/features/cart/cart_provider.dart';
 import '../routes/app_routes.dart';
 
 /// Botón reutilizable para acceder a la venta actual con contador.
