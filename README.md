@@ -31,7 +31,7 @@ Aplicación móvil tipo **POS (Punto de Venta)** para una tlapalería/ferreterí
 ## Integrantes
 - Integrante 1: Leyver Aaron Gonzalez Mendoza
 - Integrante 2: Zaid Emanuel Hernandez Espinosa
-- Integrante 3: Benjamin Alberto Arce Hernadez 
+- Integrante 3: Benjamin Alberto Arce Hernadez (@Benjamin72626281)
 
 ## Plan de Trabajo, Roles y Tareas
 
