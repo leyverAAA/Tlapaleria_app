@@ -1,10 +1,10 @@
-# Bocetos y Wireframes - Tlapalería App (Gestión de Inventario)
+# Bocetos y Wireframes - Tlapalería App (POS)
 
 ## Flujo de Navegación
 ```
-SplashScreen -> HomeScreen (Panel)
-                  ├── Inventario/Catálogo -> Detalle de producto (ajuste de stock)
-                  └── Alertas de stock bajo -> Detalle de producto
+SplashScreen -> HomeScreen (POS)
+                  ├── Catálogo (búsqueda/filtros) -> Detalle de producto (recibe Product)
+                  └── Venta actual / Carrito (ticket, total, cobro simulado)
 ```
 
 ## Pantallas
@@ -15,31 +15,32 @@ SplashScreen -> HomeScreen (Panel)
 - Indicador de carga
 - Navega automáticamente a Home
 
-### 2. HomeScreen (Panel de gestión)
+### 2. HomeScreen (POS)
 - Imagen de bienvenida (`assets/images/Bienvenida.png`)
-- Resumen: acceso a alertas de stock bajo con contador
-- Botón "Ver inventario"
-- Enfoque: ayudar al encargado a detectar problemas de gestión rápidamente
+- Mensaje "Punto de Venta" y acción principal para nueva venta/agregar productos
+- Acceso rápido a la venta actual con contador de artículos
+- Enfoque: iniciar una venta rápido en mostrador
 
-### 3. Inventario / CatalogScreen
+### 3. CatalogScreen (Productos)
 - Barra de búsqueda por nombre
 - Filtros por categoría (ChoiceChips)
-- Lista de productos con existencia y marca "Bajo" cuando aplica
-- Navega a Detalle pasando `productId` (argumento)
+- Lista de productos con precio (componente reutilizable `ProductCard`)
+- Navega a Detalle pasando el objeto `Product` (argumento)
 
-### 4. ProductDetailScreen (Detalle + gestión)
-- Recibe argumento `productId`
-- Muestra información del producto y stock actual
-- Acciones: incrementar/decrementar stock, registrar entrada (+5)
-- Actualización en tiempo real vía Provider (estado compartido)
+### 4. ProductDetailScreen (Detalle)
+- Recibe argumento `Product`
+- Muestra información del producto (nombre, categoría, precio, descripción)
+- Acción "Agregar a la venta" (actualiza estado compartido con Provider)
 
-### 5. LowStockScreen (Alertas de stock bajo)
-- Lista de productos con `stock <= minStock`
-- Permite entrar al detalle para reabastecer/ajustar
-- Estado vacío cuando no hay alertas
+### 5. CartScreen (Venta actual)
+- Lista de productos en la venta con cantidad y subtotal
+- Controles para aumentar/disminuir cantidad y vaciar venta
+- Total calculado
+- Acción "Cobrar (simulado)" con confirmación
 
 ## Consideraciones de diseño
 - Tema naranja, Material 3
 - Componentes reutilizables: `ProductCard`, `CustomButton`
 - Imágenes propias declaradas/usadas: `Logo.png`, `Bienvenida.png`
-- Enfoque en resolver problema de gestión: control de existencias y alertas de stock bajo
+- Lógica simple estilo base Viveroa (estado con `ChangeNotifier`/Provider, navegación directa)
+- Enfoque en resolver problema de gestión: registro rápido de ventas y cálculo de total

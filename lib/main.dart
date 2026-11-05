@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'core/theme/app_theme.dart';
-import 'features/cart/inventory_provider.dart';
+import 'features/cart/cart_provider.dart';
 import 'features/splash/splash_screen.dart';
 
 void main() {
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [ChangeNotifierProvider(create: (_) => InventoryProvider())],
+      providers: [ChangeNotifierProvider(create: (_) => CartProvider())],
       child: MaterialApp(
         title: 'Tlapalería App',
         debugShowCheckedModeBanner: false,

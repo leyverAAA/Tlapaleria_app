@@ -15,7 +15,7 @@
 </p>
 
 ## Descripción
-Aplicación móvil de **gestión de inventario** para una tlapalería/ferretería. Ayuda al cliente a controlar existencias, identificar productos con **stock bajo** y actualizar cantidades de forma rápida. Incluye consulta de productos, búsqueda/filtros y detalle con acciones de gestión. Desarrollada con Flutter siguiendo arquitectura lista para conectar a Firebase en Etapa 2.
+Aplicación móvil tipo **POS (Punto de Venta)** para una tlapalería/ferretería. Ayuda al cliente a **registrar ventas** de forma sencilla: consultar productos, buscar/filtrar, ver detalle, agregar artículos a la venta, ajustar cantidades y calcular el total (cobro simulado). Desarrollada con Flutter usando una lógica simple (estilo base Viveroa) y arquitectura lista para conectar a Firebase en Etapa 2.
 
 ## Documentación
 - [Definición del proyecto](docs/DEFINICION_PROYECTO.md) — problema, usuarios, alcance MVP, objetivos y requisitos priorizados.
@@ -60,7 +60,7 @@ Aplicación móvil de **gestión de inventario** para una tlapalería/ferreterí
 | :-- | :-- | :-- | :-- |
 | Tema Global | Crear el tema de la aplicación con colores, tipografía y estilos. | `lib/core/theme/app_theme.dart` | Completado (base) |
 | Componentes Reutilizables | Crear al menos 2 componentes reutilizables. (Ej: `ProductCard` y `CustomButton`) | `lib/core/widgets/` | Completado (base) |
-| Diseño de Pantallas | Encargarse de la maquetación y estilos de `SplashScreen`, `HomeScreen`, `CatalogScreen`, `ProductDetailScreen` y `LowStockScreen`. | Pantallas implementadas | Completado (base) |
+| Diseño de Pantallas | Encargarse de la maquetación y estilos de `SplashScreen`, `HomeScreen`, `CatalogScreen`, `ProductDetailScreen` y `CartScreen` (venta). | Pantallas implementadas | Completado (base) |
 | Assets | Añadir imágenes propias para los productos y declararlas en `pubspec.yaml`. | `assets/images/`, `pubspec.yaml` | Completado (base) |
 | Pulido Visual | Revisar espaciados, estados vacíos, responsividad y detalles visuales. | UI pulida | Completado |
 
@@ -71,7 +71,7 @@ Aplicación móvil de **gestión de inventario** para una tlapalería/ferreterí
 | Modelo de Datos | Crear el modelo para los productos de la tlapalería. | `lib/models/product.dart` | Completado (base) |
 | Datos Locales | Crear una lista fija de productos para simular la base de datos. | `lib/data/local/products_data.dart` | Completado (base) |
 | Repositorio | Implementar el repositorio para obtener los productos (Listo para migrar a Firebase en Etapa 2). | `lib/data/repositories/product_repository.dart` | Completado (base) |
-| Estado Compartido | Implementar `InventoryProvider` con Provider para seguimiento de inventario/stock. | `lib/features/cart/inventory_provider.dart` | Completado (base) |
+| Estado Compartido | Implementar `CartProvider` con Provider para la venta actual (productos, cantidades y total). | `lib/features/cart/cart_provider.dart` | Completado (base) |
 | Navegación | Configurar rutas, navegación entre pantallas y paso de argumentos al detalle del producto. | Navegación funcional | Completado (base) |
 | Integración | Conectar todos los módulos en `main.dart` utilizando `MultiProvider`. | `lib/main.dart` | Completado (base) |
 
@@ -100,14 +100,14 @@ Aplicación móvil de **gestión de inventario** para una tlapalería/ferreterí
 
 ### 1. Flujo y navegación
 - [x] Flujo de entrada (SplashScreen)
-- [x] Navegación entre >= 4 pantallas (Splash, Home, Inventario/Catálogo, Detalle, Alertas de stock bajo)
+- [x] Navegación entre >= 4 pantallas (Splash, Home/POS, Catálogo, Detalle, Venta/Carrito)
 
 ### 2. Catálogo y detalle de producto
-- [x] Listado/inventario con búsqueda y filtros por categoría
-- [x] Pantalla de detalle que recibe argumentos (productId) y permite gestión de stock
+- [x] Listado/catálogo con búsqueda y filtros por categoría
+- [x] Pantalla de detalle que recibe argumentos (`Product`)
 
 ### 3. Estado y tema global
-- [x] Estado compartido con Provider (InventoryProvider - seguimiento de inventario/stock)
+- [x] Estado compartido con Provider (`CartProvider` - venta actual: items, cantidades y total)
 - [x] Tema global (AppTheme)
 
 ### 4. Componentes y assets
@@ -124,7 +124,7 @@ Aplicación móvil de **gestión de inventario** para una tlapalería/ferreterí
 lib/
 ├── core/           # Constantes, tema y widgets reutilizables
 ├── data/           # Datos locales y repositorios
-├── features/       # Módulos por funcionalidad (splash, home, catalog, product_detail, cart)
+├── features/       # Módulos por funcionalidad (splash, home, catalog, product_detail, cart/venta)
 ├── models/         # Modelos de datos
 └── main.dart       # Configuración de Provider y app
 ```
@@ -147,10 +147,10 @@ Agregar capturas de pantalla de la app funcionando (requisito de entrega). Suger
 | Pantalla | Archivo sugerido |
 |---|---|
 | Splash | `docs/capturas/splash.png` |
-| Home | `docs/capturas/home.png` |
+| Home / POS | `docs/capturas/home.png` |
 | Catálogo (búsqueda/filtro) | `docs/capturas/catalogo.png` |
 | Detalle de producto | `docs/capturas/detalle.png` |
-| Alertas de stock bajo | `docs/capturas/stock_bajo.png` |
+| Venta / Carrito (ticket y total) | `docs/capturas/venta.png` |
 
 > También se puede adjuntar un video corto o el APK generado por CI (artifact `app-debug-apk`).
 
@@ -161,11 +161,11 @@ Para cumplir con la rúbrica de Ruta A, documentar en `docs/`:
 - Validación con el cliente (prototipo/MVP probado), retroalimentación y plan para atenderla en Etapa 2.
 
 ## Decisiones técnicas
-- **Provider** para gestión de inventario/stock (`InventoryProvider`, seguimiento de existencias y alertas de stock bajo).
+- **Provider** para el estado de la venta (`CartProvider`: items, cantidades y total), con lógica simple estilo base Viveroa.
 - **Repository pattern**: `ProductRepository` lee de datos locales; en Etapa 2 se reemplaza por fuente remota (Firebase) sin modificar UI.
 - **Feature-first**: Organización por funcionalidad para escalabilidad.
 - **Componentes reutilizables**: `ProductCard` y `CustomButton` para mantener consistencia visual.
-- **Enfoque de gestión**: la app resuelve un problema del cliente (control de inventario) con acciones simples: consulta, búsqueda/filtro, alertas y actualización de stock.
+- **Enfoque POS**: resuelve la necesidad del cliente de registrar ventas rápidas (consulta → agregar → total → cobro simulado).
 
 ## Backlog para Etapa 2
 
@@ -174,9 +174,9 @@ Para cumplir con la rúbrica de Ruta A, documentar en `docs/`:
 - [ ] Persistencia de sesión
 
 ### Datos y operaciones
-- [ ] Firestore para productos y carrito por usuario
+- [ ] Firestore para productos y ventas por usuario
 - [ ] CRUD de productos (administrador)
-- [ ] Órdenes de compra
+- [ ] Historial de ventas / tickets (órdenes)
 
 ### Experiencia de usuario
 - [ ] Validaciones de formularios

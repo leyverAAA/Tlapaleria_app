@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../cart/inventory_provider.dart';
-import '../cart/low_stock_screen.dart';
+import '../cart/cart_provider.dart';
+import '../cart/cart_screen.dart';
 import '../catalog/catalog_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -10,16 +10,50 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final lowStockCount = context.watch<InventoryProvider>().lowStockCount;
+    final itemCount = context.watch<CartProvider>().itemCount;
     final colorScheme = Theme.of(context).colorScheme;
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Gestión Tlapalería')),
+      appBar: AppBar(
+        title: const Text('POS Tlapalería'),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const CartScreen()),
+              );
+            },
+            icon: Stack(
+              children: [
+                const Icon(Icons.point_of_sale),
+                if (itemCount > 0)
+                  Positioned(
+                    right: 0,
+                    top: 0,
+                    child: CircleAvatar(
+                      radius: 8,
+                      backgroundColor: colorScheme.error,
+                      child: Text(
+                        '$itemCount',
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 10,
+                        ),
+                      ),
+                    ),
+                  ),
+              ],
+            ),
+            tooltip: 'Venta actual',
+          ),
+        ],
+      ),
       body: SafeArea(
-        child: SingleChildScrollView(
+        child: Padding(
           padding: const EdgeInsets.all(20),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(16),
@@ -29,45 +63,19 @@ class HomeScreen extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              const SizedBox(height: 20),
-              Text(
-                'Panel de gestión',
-                style: Theme.of(context).textTheme.headlineSmall
-                    ?.copyWith(fontWeight: FontWeight.w700),
+              const SizedBox(height: 24),
+              const Text(
+                'Punto de Venta',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
               ),
               const SizedBox(height: 8),
               Text(
-                'Controla el inventario y detecta productos con stock bajo.',
-                style: Theme.of(context).textTheme.bodyLarge
-                    ?.copyWith(color: colorScheme.onSurfaceVariant),
+                'Agrega productos, revisa el total y registra la venta.',
+                textAlign: TextAlign.center,
+                style: TextStyle(color: colorScheme.onSurfaceVariant),
               ),
-              const SizedBox(height: 20),
-              Card(
-                child: ListTile(
-                  leading: Icon(
-                    Icons.warning_amber_rounded,
-                    color: Colors.orange,
-                  ),
-                  title: const Text('Productos con stock bajo'),
-                  trailing: CircleAvatar(
-                    radius: 14,
-                    backgroundColor: lowStockCount > 0
-                        ? Colors.red
-                        : Colors.green,
-                    child: Text(
-                      '$lowStockCount',
-                      style: const TextStyle(color: Colors.white, fontSize: 12),
-                    ),
-                  ),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (_) => const LowStockScreen()),
-                    );
-                  },
-                ),
-              ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 24),
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton.icon(
@@ -77,8 +85,8 @@ class HomeScreen extends StatelessWidget {
                       MaterialPageRoute(builder: (_) => const CatalogScreen()),
                     );
                   },
-                  icon: const Icon(Icons.inventory_2),
-                  label: const Text('Ver inventario'),
+                  icon: const Icon(Icons.add_shopping_cart),
+                  label: const Text('Nueva venta / Agregar productos'),
                 ),
               ),
             ],

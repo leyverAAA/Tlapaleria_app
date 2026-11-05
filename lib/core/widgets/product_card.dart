@@ -11,8 +11,6 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
-    final lowStock = product.isLowStock;
-
     return Card(
       child: InkWell(
         borderRadius: BorderRadius.circular(12),
@@ -28,7 +26,7 @@ class ProductCard extends StatelessWidget {
                   color: colorScheme.surfaceContainerHighest,
                   borderRadius: BorderRadius.circular(12),
                 ),
-                child: Icon(Icons.inventory_2, color: colorScheme.primary),
+                child: Icon(Icons.point_of_sale, color: colorScheme.primary),
               ),
               const SizedBox(width: 12),
               Expanded(
@@ -44,36 +42,16 @@ class ProductCard extends StatelessWidget {
                       product.category,
                       style: Theme.of(context).textTheme.bodySmall,
                     ),
-                    const SizedBox(height: 4),
-                    Text(
-                      'Stock: ${product.stock}',
-                      style: TextStyle(
-                        color: lowStock
-                            ? Colors.red
-                            : colorScheme.onSurfaceVariant,
-                        fontWeight: lowStock
-                            ? FontWeight.w600
-                            : FontWeight.normal,
-                      ),
-                    ),
                   ],
                 ),
               ),
-              if (lowStock)
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 8,
-                    vertical: 4,
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.red.withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: const Text(
-                    'Bajo',
-                    style: TextStyle(color: Colors.red, fontSize: 12),
-                  ),
+              Text(
+                '\$${product.price.toStringAsFixed(2)}',
+                style: TextStyle(
+                  color: colorScheme.primary,
+                  fontWeight: FontWeight.bold,
                 ),
+              ),
             ],
           ),
         ),
