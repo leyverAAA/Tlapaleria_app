@@ -15,11 +15,11 @@
 </p>
 
 ## Descripción
-Aplicación móvil tipo **POS (Punto de Venta)** para una tlapalería/ferretería. Ayuda al cliente a **registrar ventas** de forma sencilla: consultar productos, buscar/filtrar, ver detalle, agregar artículos a la venta, ajustar cantidades y calcular el total (cobro simulado). Desarrollada con Flutter usando una lógica simple (estilo base Viveroa) y arquitectura lista para conectar a Firebase en Etapa 2.
+Aplicación móvil tipo **POS (Punto de Venta)** para una tlapalería/ferretería. Ayuda al vendedor a **armar y cobrar una venta de mostrador** de forma sencilla: consultar productos, buscar/filtrar, ver detalle, agregar artículos a la venta en curso, ajustar cantidades, calcular el total y registrar un **cobro simulado** (sin persistencia en Etapa 1). Desarrollada con Flutter usando una lógica simple (estilo base Viveroa) y arquitectura lista para conectar a Firebase en Etapa 2.
 
 ## Documentación
 - [Definición del proyecto](docs/DEFINICION_PROYECTO.md) — problema, usuarios, alcance MVP, objetivos y requisitos priorizados.
-- [Bocetos / Wireframes](docs/BOCETOS.md) — flujo de navegación y descripción de pantallas.
+- [Bocetos / Wireframes](docs/BOCETOS.md) — flujo de navegación, reglas y descripción de pantallas.
 - [Checklist de entregables Etapa 1](docs/ENTREGABLES_ETAPA1.md) — estado de entrega, capturas y Ruta A.
 - [Bitácora de IA](AI_LOG.md) — registro de usos permitidos de inteligencia artificial.
 
@@ -101,20 +101,25 @@ Aplicación móvil tipo **POS (Punto de Venta)** para una tlapalería/ferreterí
 
 **Estado: 10 de 10 completados.**
 
+> **Fuera de alcance Etapa 1:** historial persistente, inventario/stock, autenticación y cobro real. El cobro es simulado y no guarda la venta. Ver [Definición del proyecto](docs/DEFINICION_PROYECTO.md).
+
 ### 1. Flujo y navegación
 - [x] Flujo de entrada (SplashScreen)
-- [x] Navegación entre >= 4 pantallas (Splash, Home/POS, Catálogo, Detalle, Venta/Carrito)
+- [x] Navegación entre 5 pantallas (Splash, Home/Tablero POS, Catálogo, Detalle, Venta/Carrito) + pestaña Perfil (Acerca de)
+- [x] Confirmación de cobro y retorno a Home con la venta limpia
+- [x] Carrito accesible desde Home, Catálogo y Detalle
 
 ### 2. Catálogo y detalle de producto
 - [x] Listado/catálogo con búsqueda y filtros por categoría
 - [x] Pantalla de detalle que recibe argumentos (`Product`)
+- [x] Estados vacíos con acción (limpiar filtros / ver productos)
 
 ### 3. Estado y tema global
 - [x] Estado compartido con Provider (`CartProvider` - venta actual: items, cantidades y total)
-- [x] Tema global (AppTheme)
+- [x] Tema global (AppTheme) con contraste accesible para textos y precios
 
 ### 4. Componentes y assets
-- [x] Al menos 2 componentes reutilizables (ProductCard, CustomButton)
+- [x] Al menos 2 componentes reutilizables (ProductCard, CustomButton, CartActionButton)
 - [x] Assets declarados en pubspec.yaml
 
 ### 5. Datos y arquitectura
@@ -126,20 +131,43 @@ Aplicación móvil tipo **POS (Punto de Venta)** para una tlapalería/ferreterí
 ```
 lib/
 ├── core/
-│   ├── routes/     # Navegación centralizada (AppRoutes, onGenerateRoute para argumentos)
-│   ├── theme/      # Tema global
-│   └── widgets/    # Componentes reutilizables (ProductCard, CustomButton, CartActionButton)
+│   ├── routes/     # Navegación centralizada (AppRoutes, onGenerateRoute, onUnknownRoute)
+│   ├── theme/      # Tema global, paleta, tipografía y tokens de diseño
+│   ├── utils/      # Formato de precios y lenguaje visual por categoría
+│   └── widgets/    # BrandHeader, ProductCard, CategoryCircle, EmptyState, QuantityStepper, etc.
 ├── data/           # Datos locales y repositorios
-├── features/       # Módulos por funcionalidad (splash, home, catalog, product_detail, cart/venta)
+├── features/
+│   ├── shell/      # AppShell + NavigationController (bottom navigation persistente)
+│   ├── splash/     # Pantalla de bienvenida
+│   ├── home/       # Tablero POS
+│   ├── catalog/    # Búsqueda, filtros y cuadrícula de productos
+│   ├── product_detail/
+│   ├── cart/       # Venta actual
+│   └── profile/    # Acerca de la app
 ├── models/         # Modelos de datos
-└── main.dart       # Configuración de Provider y rutas
+└── main.dart       # Configuración de Provider, tema y rutas
 ```
+
+## Flujo de navegación
+
+```text
+Splash → AppShell (Inicio · Catálogo · Venta · Perfil) → Detalle → confirmación → Inicio
+```
+
+- **Inicio:** tablero con acciones rápidas, venta vacía o venta en curso.
+- **Catálogo:** búsqueda, filtros circulares por categoría y cuadrícula de productos.
+- **Venta actual:** items, cantidades, total y cobro simulado; accesible también desde el icono con contador de Inicio, Catálogo y Detalle.
+- **Detalle:** se abre como ruta independiente y conserva el estado del catálogo al volver.
+- **Cobro:** pide confirmación; solo entonces limpia la venta y vuelve a Inicio.
+- **Acciones destructivas:** “Nueva venta” con productos y “Vaciar venta” piden confirmación.
+- **Atrás:** desde una pestaña distinta regresa a Inicio; en Inicio respeta el historial del sistema.
 
 
 ## Tecnologías
 - Flutter 3.x
 - Dart
 - provider: ^6.1.5+1
+- Fuentes Outfit + Inter empaquetadas en `assets/fonts`
 
 ## Inicio rápido
 
@@ -149,15 +177,16 @@ flutter run
 ```
 
 ## Capturas
-Agregar capturas reales de la app funcionando (requisito de entrega). Ver guía: [`docs/capturas/README.md`](docs/capturas/README.md).
+Las capturas de referencia están en [`docs/capturas/`](docs/capturas/). Para la entrega, usa la guía [`docs/capturas/README.md`](docs/capturas/README.md) y renombra/reemplaza los archivos con capturas reales de la app funcionando.
 
 | Pantalla | Archivo sugerido |
 |---|---|
 | Splash | `docs/capturas/splash.png` |
-| Home / POS | `docs/capturas/home.png` |
+| Home / POS (venta vacía o en curso) | `docs/capturas/home.png` |
 | Catálogo (búsqueda/filtro) | `docs/capturas/catalogo.png` |
 | Detalle de producto | `docs/capturas/detalle.png` |
 | Venta / Carrito (ticket y total) | `docs/capturas/venta.png` |
+| Confirmación de cobro (opcional) | `docs/capturas/cobro.png` |
 
 > También se puede adjuntar un video corto o el APK generado por CI (artifact `app-debug-apk`).
 
@@ -171,11 +200,17 @@ Completar con **evidencia real** (no inventar datos). Plantillas listas en `docs
 
 ## Decisiones técnicas
 - **Provider** para el estado de la venta (`CartProvider`: items, cantidades y total), con lógica simple estilo base Viveroa.
-- **Navegación centralizada**: `AppRoutes` con rutas con nombre; `onGenerateRoute` para pasar argumentos al detalle (`Product`), manteniendo el flujo POS claro y consistente.
+- **Navegación centralizada**: `AppRoutes` con rutas con nombre; `AppShell` + `NavigationController` gestionan las pestañas persistentes; `onGenerateRoute` pasa el `Product` al detalle, `onUnknownRoute` cubre rutas inválidas y `onGenerateInitialRoutes` habilita pruebas.
+- **Una sola venta en curso**: si hay productos, iniciar una nueva venta o vaciar pide confirmación. El cobro solo limpia la venta después de confirmar.
+- **Navegación consistente**: la venta se accede desde la pestaña Venta, el icono con contador de Inicio/Catálogo/Detalle y las acciones rápidas del tablero.
+- **Sistema visual de marca**: paleta carbón + naranja, tipografías Outfit/Inter, encabezado con diagonales y componentes reutilizables (`BrandHeader`, `ProductCard`, `CategoryCircle`, `EmptyState`, `QuantityStepper`). El naranja vibrante queda como acento y `#C2410C` para texto AA.
+- **Compra rápida**: el botón circular de cada tarjeta agrega directo a la venta con aviso y acceso al carrito; tocar la tarjeta abre el detalle.
+- **Imágenes por categoría**: `ProductImageTile` ilustra cada producto según su categoría y queda listo para recibir fotografía real.
 - **Repository pattern**: `ProductRepository` lee de datos locales; en Etapa 2 se reemplaza por fuente remota (Firebase) sin modificar UI.
 - **Feature-first**: Organización por funcionalidad para escalabilidad.
-- **Componentes reutilizables**: `ProductCard`, `CustomButton` y `CartActionButton` (acceso a venta con contador).
-- **Enfoque POS**: resuelve la necesidad del cliente de registrar ventas rápidas (consulta → agregar → total → cobro simulado).
+- **Componentes reutilizables**: `BrandHeader`, `ProductCard`, `CategoryCircle`, `SectionHeader`, `EmptyState`, `QuantityStepper`, `CustomButton` y `CartActionButton`.
+- **Accesibilidad de color**: `#C2410C` como naranja principal para textos y superficies con texto (contraste AA con blanco); `#FF8A00` queda como acento decorativo.
+- **Enfoque POS**: ayuda al vendedor a armar y cobrar ventas rápidas (consulta → agregar → total → cobro simulado). En Etapa 1 no se persiste el historial.
 
 ## Backlog para Etapa 2
 
